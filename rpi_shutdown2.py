@@ -13,15 +13,18 @@
 #==============================================================================
 
 from gpiozero import Button
-import time import sleep
-import os
+from subprocess import check_call
+from signal import pause
+from time import sleep
 
-button_pwr = Button(21)
-time_delay = 2 #how long to hold power button before shutdown occures - in seconds
+def shutdown():
+	print ('Shuting Down!!')
+	sleep(2)
+	check_call(['sudo', 'poweroff'])
 	
-while true:
-button_pwr.wait_for_press()
-	time.sleep(time_delay)
-	if button_pwr.is_pressed #press and hold so you dont shutdown on accidental button press
-		print ("shutting down") #temp
-		#os.system("sudo powerdown")
+
+button_pwr = Button(21, hold_time=2)
+button_pwr.when_held = shutdown
+
+
+pause()
