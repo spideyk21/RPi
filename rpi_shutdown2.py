@@ -5,10 +5,10 @@
 #date            : 11/04/2016
 #version         : 0.1
 #
-#usage           : add to crontab, i.e. @reboot /[location]/rpi_shutdown.py
+#usage           : add to crontab, i.e. @reboot /[location]/rpi_shutdown2.py
 #
 #python_version  : 3.0
-#notes			 : uses gpiozero (https://gpiozero.readthedocs.org/)
+#notes		 : uses gpiozero (https://gpiozero.readthedocs.org/)
 #
 #==============================================================================
 
